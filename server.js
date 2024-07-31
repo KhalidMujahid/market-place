@@ -20,4 +20,12 @@ app.get("/", (req, res) => {
   res.status(200).render("index");
 });
 
+app.get("/view",(req,res) => {
+  return res.status(200).render("view");
+});
+
+app.get("/payment",(req,res) => {
+  return res.status(200).render("payment");
+});
+
 app.listen(PORT,() => console.log("Server running on port....", PORT))
