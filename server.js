@@ -20,4 +20,4 @@ app.get("/", (req, res) => {
   res.status(200).render("index");
 });
 
-app.listen(PORT,() => console.log("Server running on port..", PORT))
+app.listen(PORT,() => console.log("Server running on port....", PORT))
