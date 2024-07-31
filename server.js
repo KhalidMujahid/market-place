@@ -20,6 +20,10 @@ app.get("/", (req, res) => {
   res.status(200).render("index");
 });
 
+app.get("/contact", (req, res) => {
+  res.status(200).render("contact");
+});
+
 app.get("/view",(req,res) => {
   return res.status(200).render("view");
 });
