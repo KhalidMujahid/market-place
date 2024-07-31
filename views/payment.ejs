@@ -1,1 +1,62 @@
-<h1>Payment page</h1>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="TheDarkHood">
+    <meta name="description" content="We Sell all type of site broker trusted">
+    <meta name="keywords" content="Broker,Html,HTML,CSS,Website,">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>IBorker Sells Market Place !Payment</title>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .crypto-card {
+            margin-top: 20px;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .address {
+            font-family: monospace;
+            word-break: break-all;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container my-5">
+      <h2 class="text-center">Payment</h2>
+      <div class="row justify-content-center">
+      <div class="crypto-card">
+        <p class="text-danger">Please copy any of the addresses below to make your payment. Once we have received your payment, we will send you an email with the link to download your broker source code</p>
+      </div>
+          <div class="col-md-6">
+              <div class="crypto-card">
+                  <h5>USDT Address</h5>
+                  <p class="address" id="usdtAddress">T3s4d5f6g7h8j9k0l1m2n3o4p5q6r7s8t9u0v1w2x3y4z5</p>
+              </div>
+              <div class="crypto-card">
+                  <h5>BTC Address</h5>
+                  <p class="address" id="btcAddress">1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa</p>
+              </div>
+          </div>
+        <form>
+          <p class="text-warnning"></p>
+          <div class="crypto-card">
+              <label>Email Address</label>
+              <input type="email" class="form-control" placeholder="Enter your email address" required>
+              <button type="submit" class="btn btn-primary btn-block mt-4" onclick="copyToClipboard('btcAddress')">I have make payment</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </body>
+</html>
+    
