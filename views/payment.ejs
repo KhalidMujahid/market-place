@@ -46,22 +46,26 @@
                   <input class="form-control" id="btcAddress" value="bc1qq2la9yjcqg9amtlw24n3egpfhtvvc2xn8mc4kj" readonly>
               </div>
           </div>
-        <form action="/payment" post="post">
-          <p class="text-warning">After making your payment to any of the above addresses, please select Payment mode method you used and enter your email address.Thank you!</p>
-            <input type="hidden" value="50" name="amount"/>
-            <div class="crypto-card">
-                  <label>Payment mode</label>
-                  <select class="form-select" name="mode">
-                      <option value="usdt">USDT(TRC 20)</option>
+          <form action="/payment" method="post">
+              <p class="text-warning">After making your payment to any of the above addresses, please select the payment mode you used and enter your email address. Thank you!</p>
+              <input type="hidden" value="50" name="amount"/>
+
+              <div class="crypto-card">
+                  <label for="paymentMode">Payment Mode</label>
+                  <select class="form-select" name="mode" id="paymentMode" required>
+                      <option value="usdt">USDT (TRC 20)</option>
                       <option value="btc">BTC</option>
                   </select>
               </div>
-          <div class="crypto-card">
-              <label>Email Address</label>
-              <input type="email" name="email" class="form-control" placeholder="Enter your email address" required>
-          </div>
-              <button type="submit" class="btn btn-success btn-block mt-4">I have make payment</button>
-        </form>
+
+              <div class="crypto-card">
+                  <label for="email">Email Address</label>
+                  <input type="email" name="email" id="email" class="form-control" placeholder="Enter your email address" required>
+              </div>
+
+              <button type="submit" class="btn btn-success btn-block mt-4">I have made payment</button>
+          </form>
+
       </div>
     </div>
 
