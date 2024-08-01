@@ -1,6 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
+const Payment = require("./models/payment");
 const app = express();
 
 const PORT = process.env.PORT || 3000;
@@ -31,6 +32,48 @@ app.get("/view", (req, res) => {
 
 app.get("/payment", (req, res) => {
   return res.status(200).render("payment");
+});
+
+app.post("/payment", async (req, res, next) => {
+  try {
+    const { email, mode, amount } = req.body;
+    console.log(req.body)
+    if (!email) {
+      return res.status(400).render("error", {
+        message: "Please provide an email",
+      });
+    }
+
+    if (!mode) {
+      return res.status(400).render("error", {
+        message: "Please provide a mode",
+      });
+    }
+
+    if (!amount) {
+      return res.status(400).render("error", {
+        message: "Please provide an amount",
+      });
+    }
+
+    await Payment.create({
+      email,
+      mode,
+      amount,
+    })
+      .then(() => res.status(200).render("done"))
+      .catch(() =>
+        res.status(400).render("error", {
+          message: "Something went wrong",
+        }),
+      );
+  } catch (error) {
+    next(error);
+  }
+});
+
+app.get("*", (req, res) => {
+  res.status(301).redirect("/");
 });
 
 app.listen(PORT, () => console.log("Server running on port....", PORT));
